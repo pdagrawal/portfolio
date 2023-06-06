@@ -2,6 +2,8 @@
 ARG RUBY_VERSION=3.2.2
 FROM ruby:$RUBY_VERSION
 
+RUN apt-get update && apt-get install -y nodejs
+
 # Install libvips for Active Storage preview support
 RUN apt-get update -qq && \
     apt-get install -y build-essential libvips && \
